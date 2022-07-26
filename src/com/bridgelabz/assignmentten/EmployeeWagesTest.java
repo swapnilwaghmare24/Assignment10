@@ -1,7 +1,7 @@
 package com.bridgelabz.assignmentten;
 
 public class EmployeeWagesTest {
-    EmployeeWages[] companies;
+    IEmployeeWages[] companies;
     int lastIndex;
 
     public EmployeeWagesTest() {
@@ -10,7 +10,7 @@ public class EmployeeWagesTest {
 
     public void addCompany(String companyName, int fullTimeWorkingHour, int wagePerHour,
                            int maxWorkingDay, int maxWorkingHour) {
-        EmployeeWages employeeWages = new EmployeeWages(companyName,
+        IEmployeeWages employeeWages = new EmployeeWages(companyName,
                 fullTimeWorkingHour, wagePerHour, maxWorkingDay, maxWorkingHour);
         employeeWages.calculateEmployeeWage();
         companies[lastIndex] = employeeWages;
