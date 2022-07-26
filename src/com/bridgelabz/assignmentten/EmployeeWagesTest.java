@@ -1,11 +1,12 @@
 package com.bridgelabz.assignmentten;
 
-public class EmployeeWagesTest {
-    IEmployeeWages[] companies;
-    int lastIndex;
+import java.util.ArrayList;
 
+
+public class EmployeeWagesTest {
+    ArrayList<IEmployeeWages> companyBasedWages;
     public EmployeeWagesTest() {
-        companies = new EmployeeWages[100];
+        companyBasedWages=new ArrayList<>();
     }
 
     public void addCompany(String companyName, int fullTimeWorkingHour, int wagePerHour,
@@ -13,17 +14,16 @@ public class EmployeeWagesTest {
         IEmployeeWages employeeWages = new EmployeeWages(companyName,
                 fullTimeWorkingHour, wagePerHour, maxWorkingDay, maxWorkingHour);
         employeeWages.calculateEmployeeWage();
-        companies[lastIndex] = employeeWages;
-        lastIndex++;
+        companyBasedWages.add(employeeWages);
     }
 
     public void printAllCompanies() {
-        for (int i = 0; i < companies.length; i++) {
-            if (companies[i] != null) {
-                System.out.println(companies[i]);
-                System.out.println("<------------------------------------------------------------------------>");
-            }
+        for (IEmployeeWages ie:companyBasedWages)
+        {
+          System.out.println(ie);
+          System.out.println("<---------------------------------------------------------------------------->");
         }
+
     }
 
     public static void main(String[] args) {
